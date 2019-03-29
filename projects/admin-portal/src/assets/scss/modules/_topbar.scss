@@ -1,0 +1,60 @@
+// Topbar SCSS
+#topbar {
+  height: 90px;
+  .navbar {
+    height: inherit;
+    .header-wrap {
+      position: relative;
+    }
+    .page-sub-title {
+      position: absolute;
+      top: 17px; //magic number
+      color: $banner-color;
+      font-weight: $font-weight-bold;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: $font-weight-bold;
+      color: $banner-shadow;
+    }
+    .btn-icon {
+      box-shadow: none;
+        outline: none;
+      .envelope {
+        box-shadow: none;
+        outline: none;
+        height: 20px;
+      }
+    }
+
+    .user {
+      height: 45px;
+    }
+    .fa-arrow {
+      height: 10px;
+    }
+  }
+  .header-tools {
+    .btn-icon {
+      position: relative;
+      .badge {
+        position: absolute;
+
+        top: -13px; //magic numbers
+        right: -6px; //magic numbers
+      }
+    }
+    .nav-link {
+      outline: none;
+      box-shadow: none;
+      padding: 0;
+      color: $dark;
+    }
+  }
+  .user-name {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+}

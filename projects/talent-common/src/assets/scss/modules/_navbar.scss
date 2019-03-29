@@ -1,0 +1,26 @@
+.navbar {
+    padding: 0 2rem;
+    .navbar-brand {
+        padding: 1rem 0;
+    }
+    img {
+        height: 25px;
+    }
+    .nav-item {
+        padding: 0 1rem;
+    }
+    .nav-link {
+        padding: 1.4rem 0;
+        border-bottom: 3px solid transparent;
+        transition: all 150ms ease-in;
+        font-size: $font-size-sm;
+        color: $dark;
+        font-weight: $font-weight-bold;
+        &:hover {
+            border-color: $primary;
+        }
+    }
+    .active>.nav-link {
+        border-bottom: 3px solid $primary;
+    }
+}

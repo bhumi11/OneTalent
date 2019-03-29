@@ -1,0 +1,104 @@
+/* Rules for Buttons */
+
+.btn {
+    &:disabled,
+    &.disabled {
+        opacity: 0.5;
+    }
+    &.btn-primary,
+    &.btn-warning,
+    &.btn-danger,
+    &.btn-dark,
+    &.btn-link,
+    &.btn-outline-primary {
+        @extend %buttons;
+        min-width: 140px;
+        &:focus,
+        &.focus {
+            @extend %focus;
+        }
+        &.btn-sm {
+            min-width: 75px;
+        }
+        &.btn-xs {
+            min-width: 40px;
+            font-size: 16px;
+        }
+    }
+    &.btn-primary {
+        @include dropShadow('regular', $primary-box-shadow);
+        &:hover {
+            background-color: darken($primary, 10%);
+            border-color: darken($primary, 10%);
+        }
+        &:disabled,
+        &.disabled {
+            background-color: $primary-disable;
+            border-color: $primary-disable;
+            color: $secondary-disable;
+            @extend %noDropShadow;
+        }
+    }
+    /* warning button */
+    &.btn-warning {
+        @include dropShadow(light, $warning-box-shadow);
+        color: $white;
+        &:hover {
+            background-color: darken($warning, 10%);
+            border-color: darken($warning, 10%);
+        }
+        &:disabled,
+        &.disabled {
+            background-color: $warning-disable;
+            border-color: $warning-disable;
+        }
+    }
+    /* danger button */
+    &.btn-danger {
+        @include dropShadow(light, $danger-box-shadow);
+        &:hover {
+            background-color: darken($danger, 10%);
+            border-color: darken($danger, 10%);
+        }
+        &:disabled,
+        &.disabled {
+            background-color: $danger-disable;
+            border-color: $danger-disable;
+        }
+    }
+    /* dark button */
+    &.btn-dark {
+        @include dropShadow(light, $dark-box-shadow);
+        &:hover {
+            background-color: darken($dark-hover, 10%);
+            border-color: darken($dark-hover, 10%);
+        }
+        &:disabled,
+        &.disabled {
+            background-color: $dark-disable;
+            border-color: $dark-disable;
+        }
+    }
+    /* primary outline button */
+    &.btn-outline-primary {
+        border: 2px solid $primary;
+        @include dropShadow(light, $dark-box-shadow);
+        min-width: 140px;
+        &:hover {
+            background-color: darken($primary, 10%);
+            border-color: darken($primary, 10%);
+            color: $white;
+        }
+    }
+}
+
+.btn-transparent {
+    @include border-radius(all, 0px);
+    padding: 5px;
+    line-height: 1;
+    cursor: pointer;
+    &:focus,
+    &.focus {
+        @extend %focus;
+    }
+}

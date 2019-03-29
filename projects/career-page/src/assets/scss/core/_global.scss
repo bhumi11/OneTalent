@@ -1,0 +1,83 @@
+// Global level Rules
+html,
+body {
+    width: 100%;
+    font-family: $font-family-base;
+    color: $dark;
+    font-size: 1rem;
+}
+a{
+    box-shadow: 0;
+}
+body {
+    background-color: $body-bg;
+    overflow-x: hidden;
+}
+
+// Underline 
+.underline {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $primary;
+        height: 3px;
+        width: 45px;
+        margin: 0 auto;
+    }
+}
+.underline-start{
+    &::before {
+        left: 0;
+        margin: 0;
+    }
+}
+// Navigation buttons
+.previous ,.next{
+    &::before ,&::after{
+        position:absolute;
+        content: '';
+        left: -50%;
+        top: 17%;
+        bottom: 0;
+        height: 8px;
+        width: 8px;
+        border: 1px solid $dark;
+        transform: rotate(45deg);
+        border-top: 0;
+        border-right: 0;
+        
+    }
+    &::after{
+        left:-50%;
+        top: 43.5%;
+        height: 1px;
+        width: 25px;
+        background-color: $dark;
+        transform: rotate(0);
+    }
+}
+.navigation{
+    span{
+        letter-spacing: .08rem;
+    }
+}
+
+
+.next{
+    &::before ,&::after{
+        left: 143%;
+        border-color: $primary;
+        transform: rotate(225deg);
+       
+    }
+    &::after{
+        left:125%;  
+        background-color: $primary;
+        transform: rotate(0);
+    }
+}

@@ -1,0 +1,62 @@
+//   Desc: Use @extend keyword to use placeholder
+
+
+// Remove drop shadow from element 
+%noDropShadow {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+// Common/Default button CSS Rules
+%buttons {
+    padding: 10px 15px;
+    @include border-radius(all, $border-radius);
+    line-height: 1;
+    font-size: 14px;
+}
+
+// Common/Default input controls
+
+%focus {
+    -webkit-box-shadow: 0 0 0 0.15rem rgba(0, 175, 238, 0.38);
+    box-shadow: 0 0 0 0.15rem rgba(0, 175, 238, 0.38);
+}
+%noFocus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+%noFocus,
+%checkbox-radio-focus {
+    border-color: transparent;
+    outline: 0;
+}
+
+%checkbox-radio-focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 175, 238, 0.65);
+    box-shadow: 0 0 0 0.2rem rgba(0, 175, 238, 0.65);
+}
+
+%form-control {
+    padding: 10px;
+    @include border-radius(all, $border-radius);
+    font-size: 14px;
+    @include border(all, solid, 1px, $gray-400);
+    height: auto!important;
+    line-height: 1.3;
+}
+
+%box-header {
+    padding: 10px 15px;
+    background-color: $body-bg;
+    @include border-radius(top, $border-radius);
+    @include border-radius(right, $border-radius);
+    font-family: $font-family-base;
+    font-weight: $font-weight-normal;
+    font-size: 14px;
+}
+%border-none{
+    border-width: 0;
+    border-style: none;
+    border-color: transparent;
+}

@@ -1,0 +1,205 @@
+// Description : All variables used in app are declared here
+
+
+// Start : Changed Bootstrap Variable
+// basic colors
+$white: #fff;
+$gray-100: #f1f7ff; //updated //sidebarIcon hover (main heading and username)   
+$gray-200: #e9ecef;
+$gray-300: #f4f5f7; //updated 
+$gray-400: #f5f6fa; //table-row-color
+$gray-500: #adb5bd; //table-heading(name,domain)
+$gray-600: #666E87; //Module-Heading  
+$gray-700: #626984; // updated // text color (table)
+$gray-800: #3d4964; //updated For(MAIN HEADER-- LARGE HEADER)
+$gray-900: #25282f; //updated
+$black: #000;
+
+$blue: #2c99f8; //updated badge color(icon color)
+$badge-color: #2178fe; //badge color
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #da2127;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #5bc592; //updated
+$teal: #20c997;
+$cyan: #17a2b8;
+$navy-blue: #28334b; //updated
+$navyblue-light: #36425d; //updated 
+
+// Overlay color
+// $overlay-background : rgba(0,0,0,.8);
+//gradient color
+$background-gradient: linear-gradient(to bottom right, #70a7ff 0%, #2278ff 100%); //icon:hover background-color
+
+// Theme color
+$primary: $gray-700; //updated text color table
+$secondary: $gray-300;
+$success: $green;
+$info: $blue; //updated btn color
+$warning: $yellow;
+$danger: $red;
+$light: $gray-400;
+$dark: $navyblue-light;
+$darker: $navy-blue;
+$banner-color : $gray-100;
+$banner-shadow: $gray-800;
+$table-heading:$gray-500;
+$table-row-color: $gray-400;
+$module-heading:$gray-600;
+
+
+$theme-colors: ("primary": $primary,
+"secondary": $secondary,
+"success": $success,
+"info": $blue,
+"warning": $warning,
+"danger": $danger,
+"light": $light,
+"dark": $dark,
+"darker": $darker,
+"banner-color" :$banner-color,
+"module-heading": $module-heading,
+"table-heading": $table-heading,
+
+);
+
+// Disable rounded corners
+$enable-rounded: true;
+
+//Border color change
+$border-color: lighten($gray-500,20%);
+$input-border-color:$gray-500;
+
+// Fonts 
+
+$enable-responsive-font-sizes:true;
+
+$font-family-montserrat: 'Montserrat',
+sans-serif;
+
+
+$font-family-base: $font-family-montserrat;
+
+
+$font-size-base: .875rem;
+$font-size-lg: $font-size-base * 1.5;
+$font-size-sm: $font-size-base * .875;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 600; //updated
+$font-weight-bolder: bolder;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+
+$h1-font-size: $font-size-base * 3;
+$h2-font-size: $font-size-base * 2.5;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$headings-font-weight: 500;
+$headings-line-height: 1.2;
+$headings-color: null;
+
+$display1-size: 6rem;
+$display2-size: 5.5rem;
+$display3-size: 4.5rem;
+$display4-size: 3.0rem; //updated 
+
+$display1-weight: 300;
+$display2-weight: 300;
+$display3-weight: 300;
+$display4-weight: 300;
+$display-line-height: $headings-line-height;
+
+$lead-font-size: $font-size-base * 1.25;
+$lead-font-weight: 300;
+
+$small-font-size: 80%;
+
+$text-muted: $gray-600;
+
+// change paragraph tag margin
+$paragraph-margin-bottom: .3rem;
+
+
+$form-group-margin-bottom: .8rem;
+// label
+$label-margin-bottom: 0;
+// End : Bootstrap Variables
+
+// Background color for `<body>`. 
+$body-bg: $secondary;
+
+// Primary Colors Shades
+$primary-dark: darken($primary, 10%);
+$primary-disable: lighten($primary, 15%);
+$primary-light: lighten($primary, 10%);
+
+
+// Secondary Colors Shades 
+$secondary-disable: lighten($secondary, 10%);
+$secondary-light: lighten($secondary, 10%);
+$secondary-dark: darken($secondary, 10%);
+
+//  Dark Color Shades 
+$dark: #343a40;
+$dark-hover: darken($dark, 10%);
+
+$dark-disable: lighten($dark, 10%);
+
+
+//  Warning Color 
+$warning-light: lighten($warning, 10%);
+$warning-dark: darken($warning, 10%);
+$warning-disable: lighten($warning, 15%);
+
+// Danger Color
+$danger-light: lighten($danger, 10%);
+$danger-dark: darken($danger, 10%);
+$danger-disable: lighten($danger, 15%);
+
+// Info  color Shades  
+$info-light: lighten($info, 10%);
+$info-dark: darken($info, 10%);
+$info-disable: lighten($info, 15%);
+
+
+//Success color Shades  
+$success-light: lighten($success, 10%);
+$success-dark: darken($success, 10%);
+$success-disable: lighten($success, 15%);
+
+
+//Box-shadow 
+
+$box-shadow: 1.5px 2.598px 10px 0;
+$box-light-shadow:0 2px 3px 0px;
+$primary-box-shadow: rgba(0, 128, 255, .25);
+$warning-box-shadow: rgba(255, 208, 28, .25);
+$danger-box-shadow: rgba(251, 96, 127, .25);
+$dark-box-shadow: rgba(115, 117, 122, .25);
+
+
+
+// Responsiveness breakpoints 
+$breakpoints: ("phone": 400px,
+"phone-wide": 480px,
+"phablet": 560px,
+"tablet-small": 640px,
+"tablet": 768px,
+"tablet-wide": 1024px,
+"laptop-mini": 1248px,
+"laptop": 1366px,
+"desktop-wide": 1440px);
+
+// Border
+$border-radius : 5px;

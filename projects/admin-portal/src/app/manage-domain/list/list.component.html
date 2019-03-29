@@ -1,0 +1,75 @@
+<!-- Start: Table -->
+<div
+  class="section-heading d-flex justify-content-between align-items-center p-2 flex-shrink-0 border border-bottom-dark">
+  <h5 class="title-heading m-0 text-module-heading">Domains</h5>
+  <button type="button" (click)="addDomainShowForm()" class="btn btn-info"><span class="fa fa-plus"
+      aria-hidden="true"></span><span class="ml-2">ADD
+      NEW</span></button>
+</div>
+<div class="table-header w-100 px-2 pt-2">
+  <table class="table table-sm table-responsive-sm table-borderless w-100 mb-0">
+    <tr class="table-heading text-table-heading ">
+      <th style="width:10%" class=" text-center">NO.</th>
+      <th style="width:15%">DOMAIN NAME</th>
+      <th style="width:60%">DESCRIPTION</th>
+      <th style="width:15%" class="text-center">ACTIONS</th>
+    </tr>
+  </table>
+</div>
+<div class="table-container px-2  pb-2">
+  <table class="table  table-responsive-sm table-borderless">
+    <!-- Table heading -->
+    <!-- Start : Table Body -->
+    <tbody>
+      <tr class="table-data" *ngFor="let domainList of domainList; trackBy: domainList?.domainId">
+        <td style="width:10%" class="text-center"> {{ domainList.domainId }} </td>
+        <td style="width:15%" class="domain-name"> {{ domainList.domainName }} </td>
+        <td style="width:60%" class="domain-description"> {{ domainList.description }} </td>
+        <td style="width:15%" class="text-center">
+          <a (click)="editDomainById(domainList.domainId)">
+            <img src="../../../assets/images/logo/actions_edit.png" alt="Edit-icon" class="operation-icon">
+          </a>
+          <a (click)="openDeleteDialog(domainList.domainId)">
+            <img src="../../../assets/images/logo/actions_delete.png" alt="delete-icon" class="operation-icon ml-3">
+          </a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<!-- End : Table -->
+<!-- Start: Form -->
+<aside *ngIf="isShow" class="form-section bg-white flex-grow-1 d-flex flex-column">
+  <div
+    class="form-heading d-flex justify-content-between align-items-center flex-shrink-0 p-3 bg-light border border-bottom-primary">
+    <h5 class="text-module-heading m-0">Add New Domain</h5>
+    <a (click)="addDomainHideForm()">
+      <img src="../../../assets/images/logo/close.png" alt="close">
+    </a>
+  </div>
+  <div class="form-wrapper d-flex overflow-auto mt-3">
+    <form class="form mx-3 w-100" [formGroup]="domainListForm">
+      <div class="form-group">
+        <label for="domain-name">Domain Name</label>
+        <input class="form-control form-control-sm w-100" type="text" id="domain-name" formControlName="domainName"
+          [ngClass]="{'is-invalid':domainValidation.domainName.touched && domainValidation.domainName.invalid}">
+        <div *ngIf="domainListForm.get('domainName').touched && domainListForm.get('domainName').invalid"
+          class="invalid-feedback">
+          <div *ngIf="domainValidation.domainName.errors?.required">Domain Name is required</div>
+          <div *ngIf="domainValidation.domainName.errors?.maxlength">Allow only fifty character</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="domain-description">Description</label>
+        <textarea class="form-control form-control-sm" id="domain-description" rows="3" formControlName="description"
+          maxlength="200"></textarea>
+
+      </div>
+    </form>
+  </div>
+  <footer class="form-foot p-3 ">
+    <button type="button" class="btn btn-info px-4" (click)="addDomain()"><span>SAVE</span></button>
+  </footer>
+</aside>
+<!-- Form End -->

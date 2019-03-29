@@ -1,0 +1,64 @@
+// Reset CSS rules of Root level elements
+
+button {
+    background-color: transparent;
+    @include border(all, solid, 0, transparent)
+}
+
+// Default focused element style
+
+button,
+input,
+a,
+textarea {
+    &:focus,
+    &.focus {
+        @extend %focus;
+    }
+}
+
+input {
+    &:focus,
+    &.focus {
+        &+label:before {
+            @extend %focus;
+        }
+    }
+}
+
+// Reset all the headings styles
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+h5,
+h6,
+.h6 {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+// Enhance style of <strong>
+strong {
+    font-weight: bold;
+}
+
+// Reset CSS rules <a>
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+// To remove default input styling of IE browsers 
+
+input[type=text]::-ms-clear {
+    display: none;
+}

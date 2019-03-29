@@ -1,0 +1,37 @@
+#topbar{
+    @import "../modules/navbar";
+ 
+}
+
+#main{
+    position: relative;
+    margin-top: 60px;
+    line-height: 1.7;
+    .h2{
+        padding-bottom: .5rem;
+    }
+}
+
+#introduction {
+    min-height: 290px;
+    overflow: hidden;
+    background-image: url('../img/background/introduction.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#culture{    
+    .album{
+        .card-img-overlay{
+            background-color: $overlay-background;
+            // color: #fff
+            .fa-play-circle{
+                font-size: 5rem;
+            }
+        }
+        .overlay-heading{
+            top: 85%;
+        }
+    }
+}
+

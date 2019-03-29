@@ -1,0 +1,40 @@
+.section-heading {
+  .btn {
+    font-weight: $font-weight-bold;
+    font-size: 0.8rem;
+  }
+  .title-heading {
+    font-weight: 600;
+  }
+}
+
+.table-container table {
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  .table-data {
+    background: $table-row-color;
+    cursor: pointer;
+    .domain-description{
+        white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;
+    }
+    td {
+      color:$primary;
+      font-weight: $font-weight-bold;
+      padding-top: 1.25em;
+      padding-bottom: 1.25em;
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

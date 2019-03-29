@@ -1,0 +1,31 @@
+<main class="main-container d-flex h-100">
+  
+  <aside class="sidebar-container bg-darker shadow " id="sidebar">
+    <one-talent-sidebar></one-talent-sidebar>
+  </aside>
+  <section class="site-container flex-grow-1 bg-dark d-flex flex-column flex-shrink-0 ">
+    <one-talent-topbar></one-talent-topbar>
+    <section class="main-content bg-white mx-4 rounded flex-grow-1 d-flex flex-column  mb-4 mt-2 overflow-hidden">
+      <div class="table-container overflow-auto ">
+        <router-outlet></router-outlet>
+      </div>
+      <!-- System loader -->
+        
+      <div class="overlay" [hidden]="!loaderStatus">
+          <div class="lds-roller" >
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+        </div>
+
+
+      <!-- End System loader -->
+    </section>
+  </section>
+</main>

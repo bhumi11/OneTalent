@@ -1,0 +1,42 @@
+<!-- Job Opening Cards -->
+<div class="row justify-content-center">
+  <!-- Job opening card -->
+  <div class="col-xs-12 col-sm-8 col-md-4 mb-3"
+    *ngFor="let vacancy of diplayVacancies; trackBy:vacancy?.jobId; let i=index" >
+    <ng-container *ngIf="isNextAvailable; else not_available">
+    <div class="card border text-center cursor-pointer" [@fadeInRight]="{ value: '', params: { delay: i * 30 },translate: '' }" >
+      <div class="card-body">
+        <h5> {{ vacancy.jobName }} </h5>
+        <p class=""><small class="text-muted"> {{ vacancy.experience }} + years experience</small>
+        </p>
+        <p class=""><small class="text-muted">Location: {{ vacancy.countryName }}</small>
+        </p>
+        <p class=""><small class="text-muted">Apply now - <span class="text-primary">2
+            Positions</span> </small>
+        </p>
+      </div>
+    </div>
+    <ng-template #not_available > 
+      <div class="card border text-center cursor-pointer" >
+        <div class="card-body">
+          <h5> {{ vacancy.jobName }} </h5>
+          <p class=""><small class="text-muted"> {{ vacancy.experience }} + years experience</small>
+          </p>
+          <p class=""><small class="text-muted">Location: {{ vacancy.countryName }}</small>
+          </p>
+          <p class=""><small class="text-muted">Apply now - <span class="text-primary">2
+              Positions</span> </small>
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+  </div>
+</div>
+<!-- Navigation buttons -->
+<div class="navigation text-center my-4 ">
+  <small class="position-relative cursor-pointer"> <span class="previous" ng-disabled="isPrevAvailables"
+      (click)="prevVacancyLoad()">P R E V</span> /
+    <span class="next text-primary" ng-disabled="isNextAvailable"  (click)="nextVacancyLoad()"> N E X T </span></small>
+</div>
+<hr>

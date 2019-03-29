@@ -1,0 +1,30 @@
+<nav class="nav-sidebar ">
+  <!-- Header sidebar -->
+  <header class="header-sidebar d-flex justify-content-center align-items-center">
+    <a href="#" class="brand-logo"><img src="../../../../assets/img/logo/logo.png" alt="Brand-Logo"></a>
+  </header>
+  <!-- Start : Sidebar-Content -->
+  <ul class="navbar-nav mt-4">
+    <li class="nav-item active dashboard">
+      <a href="#" class="nav-link">
+        <span class="navbar-icon dashboard-icon"></span>
+      </a>
+      <ul class="dashboard-submenu">
+        <li class="p-2"> <a [routerLink]="['/manage-vacancy']">Manage Vacancy</a></li>
+        <li class="p-2"> <a [routerLink]="['/manage-leaves']">Manage Leaves</a></li>
+        <!-- <li class="p-2"><a href="manage-vacancy">Designations </a></li> -->
+      </ul>
+    </li>
+    <li class="nav-item help">
+      <a href="#" class="nav-link">
+        <span class="navbar-icon help-icon"></span>
+      </a>
+    </li>
+    <li class="nav-item settings">
+      <a href="#" class="nav-link">
+        <span class="navbar-icon settings-icon"></span>
+      </a>
+    </li>
+  </ul>
+  <!-- End : Sidebar-Content -->
+</nav>

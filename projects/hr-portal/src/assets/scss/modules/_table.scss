@@ -1,0 +1,119 @@
+//List vacancy custom scss
+.section-heading {
+    .btn {
+        font-weight: 500;
+        font-size: $font-size-sm;
+    }
+    .title-heading {
+        font-weight: 600;
+    }
+}
+
+.table-container table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    .table-data {
+        img {
+            padding-left: 0.5rem;
+        }
+        background: $table-row-color;
+        cursor: pointer;
+        td {
+            color: $primary;
+            font-weight: $font-weight-bold;
+            padding-top: 1.25em;
+            padding-bottom: 1.25em;
+            &:first-child {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+            &:last-child {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+//Add vacancy Custom scss
+.main-content {
+    position: relative;
+}
+
+.form-section {
+    top: 0;
+    right: 0;
+    width: 30%;
+    overflow: hidden;
+    border-left: 2px solid $primary;
+    .form {
+        width: 95%;
+        margin: 0 auto;
+        label {
+            color: $primary;
+            font-weight: $font-weight-bold;
+        }
+        input {
+            box-shadow: none;
+            &:hover {
+                border-color: $primary;
+                box-shadow: none;
+            }
+            &:focus {
+                border-color: $primary;
+                box-shadow: none;
+            }
+        }
+        textarea {
+            &:hover {
+                border-color: $primary;
+                box-shadow: none;
+            }
+            &:focus {
+                border-color: $primary;
+                box-shadow: none;
+            }
+        }
+        #domain {
+            &:focus {
+                border-color: $primary;
+                box-shadow: none;
+            }
+        }
+        #designation {
+            &:focus {
+                border-color: $primary;
+                box-shadow: none;
+            }
+        }
+        #technology {
+            &:focus {
+                border-color: $primary;
+                box-shadow: none;
+            }
+        }
+        #country {
+            &:focus {
+                border-color: $primary;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.form-foot {
+    text-align: right;
+    .btn-info {
+        font-size: 0.725rem;
+        font-weight: $font-weight-bold;
+    }
+}
+
+.title-heading {
+    font-weight: $font-weight-bold;
+}

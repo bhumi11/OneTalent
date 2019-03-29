@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+// -----------------------------------------------------
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent,
+  },
+];
+
+/**
+ * NgModule - This module use for set the routes
+ */
+@NgModule({
+  exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
+})
+export class DashboardRoutingModule { }

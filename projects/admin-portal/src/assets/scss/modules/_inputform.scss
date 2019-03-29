@@ -1,0 +1,63 @@
+// /* Rules for Forms */
+// .table-container{
+//     position: relative;
+.main-content {
+  position: relative;
+}
+
+.form-section {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 30%;
+  overflow: hidden;
+  box-shadow: -2px 0 8px 2px $primary;
+
+  .title-heading {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.form-wrapper {
+  height: 100%;
+  width: 100%;
+
+  .form {
+    label {
+      color: $primary;
+      font-weight: $font-weight-bold;
+    }
+
+    input {
+      box-shadow: none;
+
+      &:hover {
+        border-color: $primary;
+        box-shadow: none;
+      }
+
+      &:focus {
+        border-color: $primary;
+        box-shadow: none;
+      }
+    }
+
+    textarea {
+      &:focus {
+        box-shadow: none;
+        border-color: $primary;
+      }
+    }
+  }
+}
+
+
+.form-foot {
+  text-align: right;
+
+  .btn {
+    font-size: 0.725rem;
+    font-weight: $font-weight-bold;
+  }
+}

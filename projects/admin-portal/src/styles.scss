@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import "assets/scss/core/variables";
+
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+@import "assets/scss/core/functions";
+@import "assets/scss/core/mixins";
+@import "assets/scss/core/placeholder";
+@import "assets/scss/core/global";
+@import "assets/scss/core/reset";
+@import "assets/scss/core/typography";
+@import "assets/scss/core/misc";
+
+
+//Bootstrap File
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+@import "assets/scss/modules/sidebar";
+@import "assets/scss/modules/topbar";
+@import "assets/scss/modules/table";
+@import "assets/scss/modules/inputform";
+
+//Bootstrap File
+
+@import "~bootstrap/scss/bootstrap.scss";

@@ -1,0 +1,16 @@
+/* Rules for Table layout */
+
+.data-table {
+    /* Table heading */
+    &-header {}
+    /* Table body */
+    &-body {}
+    /* Table Row */
+    &-row {
+        /* Data table row Item */
+        &-item {}
+        &.active {}
+    }
+    /* Table Footer */
+    &-footer {}
+}

@@ -1,0 +1,121 @@
+// Sidebar SCSS
+#sidebar {
+    width: 90px;
+    z-index: 1;
+    .header-sidebar {
+        height: 90px;
+        img {
+            height: 35px;
+        }
+    }
+    .nav-item {
+        padding: 1rem;
+        .sub-modules {
+            text-decoration: none;
+            color: $white;
+            font-size: $font-size-sm;
+        }
+        .nav-link {
+            box-shadow: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.25s ease;
+            .navbar-icon {
+                transition: all 0.25s ease;
+                height: 25px;
+                width: 25px;
+            }
+            .dashboard-icon {
+                background: url("/assets/img/logo/dashboard_active.png");
+                background-size: 25px;
+            }
+            .settings-icon {
+                background: url("/assets/img/logo/settings_active.png");
+                background-size: 25px;
+            }
+            .help-icon {
+                background: url("/assets/img/logo/help_active.png");
+                background-size: 25px;
+            }
+        }
+        &:hover,
+        &.active {
+            background: $background-gradient;
+            .navbar-icon {
+                background-size: 25px;
+            }
+            .dashboard-icon {
+                background: url("/assets/img/logo/dashboard_hover.png");
+                background-size: 25px;
+            }
+            .settings-icon {
+                background: url("/assets/img/logo/settings_hover.png");
+                background-size: 25px;
+            }
+            .help-icon {
+                background: url("/assets/img/logo/help_hover.png");
+                background-size: 25px;
+            }
+        }
+    }
+}
+
+.dashboard {
+    position: relative;
+    &::after {
+        content: "";
+        border: 5px solid black;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-color: transparent transparent transparent $white;
+        position: absolute;
+        top: 33px;
+        right: 3px;
+        transition: all .3s ease;
+    }
+    &:hover {
+        &::after {
+            content: "";
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-color: transparent transparent transparent $darker;
+            margin-right: -15px;
+            position: absolute;
+            right: 0;
+            transform: rotateZ(180deg);
+            -webkit-transform: rotateZ(180deg);
+            transition: .7s;
+        }
+        .dashboard-submenu {
+            visibility: visible;
+            transform: scale(1, 1);
+            li {
+                cursor: pointer;
+                &:hover {
+                    background: $background-gradient;
+                }
+            }
+        }
+    }
+    .dashboard-submenu {
+        list-style: none;
+        height: 0;
+        position: absolute;
+        visibility: hidden;
+        transform: scale(0, 0);
+        margin-left: 45px;
+        top: 20px;
+        left: 20px;
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+        transition: 0.4s ease-in-out;
+        li {
+            font-weight: $font-weight-bold;
+            background: $darker;
+            color: $white;
+        }
+    }
+}

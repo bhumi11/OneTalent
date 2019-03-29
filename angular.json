@@ -1,0 +1,430 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "career-page": {
+      "root": "projects/career-page/",
+      "sourceRoot": "projects/career-page/src",
+      "projectType": "application",
+      "prefix": "one-talent",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/career-page",
+            "index": "projects/career-page/src/index.html",
+            "main": "projects/career-page/src/main.ts",
+            "polyfills": "projects/career-page/src/polyfills.ts",
+            "tsConfig": "projects/career-page/tsconfig.app.json",
+            "assets": [
+              "projects/career-page/src/favicon.ico",
+              "projects/career-page/src/assets"
+            ],
+            "styles": [
+              "projects/career-page/src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [{
+                "replace": "projects/career-page/src/environments/environment.ts",
+                "with": "projects/career-page/src/environments/environment.prod.ts"
+              }],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "career-page:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "career-page:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "career-page:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/career-page/src/test.ts",
+            "polyfills": "projects/career-page/src/polyfills.ts",
+            "tsConfig": "projects/career-page/tsconfig.spec.json",
+            "karmaConfig": "projects/career-page/karma.conf.js",
+            "styles": [
+              "projects/career-page/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/career-page/src/favicon.ico",
+              "projects/career-page/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/career-page/tsconfig.app.json",
+              "projects/career-page/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "career-page-e2e": {
+      "root": "projects/career-page-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/career-page-e2e/protractor.conf.js",
+            "devServerTarget": "career-page:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "career-page:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/career-page-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "hr-portal": {
+      "root": "projects/hr-portal/",
+      "sourceRoot": "projects/hr-portal/src",
+      "projectType": "application",
+      "prefix": "one-talent",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/hr-portal",
+            "index": "projects/hr-portal/src/index.html",
+            "main": "projects/hr-portal/src/main.ts",
+            "polyfills": "projects/hr-portal/src/polyfills.ts",
+            "tsConfig": "projects/hr-portal/tsconfig.app.json",
+            "assets": [
+              "projects/hr-portal/src/favicon.ico",
+              "projects/hr-portal/src/assets"
+            ],
+            "styles": [
+              "projects/hr-portal/src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [{
+                "replace": "projects/hr-portal/src/environments/environment.ts",
+                "with": "projects/hr-portal/src/environments/environment.prod.ts"
+              }],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "hr-portal:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "hr-portal:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "hr-portal:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hr-portal/src/test.ts",
+            "polyfills": "projects/hr-portal/src/polyfills.ts",
+            "tsConfig": "projects/hr-portal/tsconfig.spec.json",
+            "karmaConfig": "projects/hr-portal/karma.conf.js",
+            "styles": [
+              "projects/hr-portal/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/hr-portal/src/favicon.ico",
+              "projects/hr-portal/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/hr-portal/tsconfig.app.json",
+              "projects/hr-portal/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "hr-portal-e2e": {
+      "root": "projects/hr-portal-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/hr-portal-e2e/protractor.conf.js",
+            "devServerTarget": "hr-portal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "hr-portal:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/hr-portal-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "admin-portal": {
+      "root": "projects/admin-portal/",
+      "sourceRoot": "projects/admin-portal/src",
+      "projectType": "application",
+      "prefix": "one-talent",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/admin-portal",
+            "index": "projects/admin-portal/src/index.html",
+            "main": "projects/admin-portal/src/main.ts",
+            "polyfills": "projects/admin-portal/src/polyfills.ts",
+            "tsConfig": "projects/admin-portal/tsconfig.app.json",
+            "assets": [
+              "projects/admin-portal/src/favicon.ico",
+              "projects/admin-portal/src/assets"
+            ],
+            "styles": [
+              "projects/admin-portal/src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [{
+                "replace": "projects/admin-portal/src/environments/environment.ts",
+                "with": "projects/admin-portal/src/environments/environment.prod.ts"
+              }],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "admin-portal:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "admin-portal:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin-portal:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/admin-portal/src/test.ts",
+            "polyfills": "projects/admin-portal/src/polyfills.ts",
+            "tsConfig": "projects/admin-portal/tsconfig.spec.json",
+            "karmaConfig": "projects/admin-portal/karma.conf.js",
+            "styles": [
+              "projects/admin-portal/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/admin-portal/src/favicon.ico",
+              "projects/admin-portal/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/admin-portal/tsconfig.app.json",
+              "projects/admin-portal/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "admin-portal-e2e": {
+      "root": "projects/admin-portal-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/admin-portal-e2e/protractor.conf.js",
+            "devServerTarget": "admin-portal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "admin-portal:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/admin-portal-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "talent-common": {
+      "root": "projects/talent-common",
+      "sourceRoot": "projects/talent-common/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/talent-common/tsconfig.lib.json",
+            "project": "projects/talent-common/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/talent-common/src/test.ts",
+            "tsConfig": "projects/talent-common/tsconfig.spec.json",
+            "karmaConfig": "projects/talent-common/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/talent-common/tsconfig.lib.json",
+              "projects/talent-common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "career-page"
+}

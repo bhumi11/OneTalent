@@ -1,0 +1,21 @@
+.s-no{
+    width:10%;
+}
+.designation-name{
+    width: 80%;
+}
+.actions{
+    width:10%;
+}
+
+@media only screen and (max-width: 992px){
+    .s-no{
+        width:15%;
+    }
+    .designation-name{
+        width: 70%;
+    }
+    .actions{
+        width:15%;
+    }
+}

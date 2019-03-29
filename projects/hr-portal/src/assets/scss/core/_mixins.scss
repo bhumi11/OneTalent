@@ -1,0 +1,190 @@
+// Desc: Use @include to import the CSS rules from mixins
+
+
+// To apply drop shadow
+// ARG: $color as rgba
+@mixin dropShadow($type:light, $color:rgba(0,0,0,.1)) {
+    @if $type==light {
+        -webkit-box-shadow: $box-light-shadow $color;
+        box-shadow: $box-light-shadow $color;
+    }
+    @else {
+        -webkit-box-shadow: $box-shadow $color;
+        box-shadow: $box-shadow $color;
+    }
+}
+
+// To apply transition
+// ARG: $duration as ms
+@mixin transition($duration:400ms) {
+    transition: all $duration ease-in-out;
+}
+
+// To apply border-radius
+// ARG: $for as [all,top,right,bottom,left], $val as [any CSS unit]
+@mixin border-radius($for:all, $val:$border-radius) {
+    @if $for==all {
+        border-radius: $val;
+    }
+    @else if $for==top {
+        border-top-left-radius: $val;
+    }
+    @else if $for==right {
+        border-top-right-radius: $val;
+    }
+    @else if $for==bottom {
+        border-bottom-right-radius: $val;
+    }
+    @else if $for==left {
+        border-bottom-left-radius: $val;
+    }
+}
+
+// To apply borders
+// ARG: $for as [all,top,right,bottom,left],$type as [any border type value], $size as [any CSS unit], $color as [any CSS unit]
+@mixin border($for, $type, $size, $color) {
+    @if $for==all {
+        border: $size $type $color;
+    }
+    @else if $for==top {
+        border-top: $size $type $color;
+    }
+    @else if $for==right {
+        border-right: $size $type $color;
+    }
+    @else if $for==bottom {
+        border-bottom: $size $type $color;
+    }
+    @else if $for==left {
+        border-left: $size $type $color;
+    }
+}
+
+// To apply predefine pseudo CSS Rules
+// ARG: $display as [block,inline,inline-block,initial,inherit,], $pos as [absolute,relative,fixed,static]
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// To apply font-awesome icons from pseudo
+// ARG: $unicode as [font-awesome unicode], $color as [any unit], $size as [any CSS unit] 
+@mixin font-awesome($unicode, $color, $size:14px) {
+    content: $unicode;
+    color: $color;
+    display: inline-block;
+    font: normal normal normal 14px/1 'FontAwesome';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// To apply CSS triangle
+// ARG: $colo as [any CSS unit], $direction as [up,right,left,down], $size as [any CSS unit], $pos as [absolute,relative,fixed,static], $round[optional]
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction==down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5);
+    }
+    @else if $direction==up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5);
+    }
+    @else if $direction==right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    }
+    @else if $direction==left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+// To apply CSS rules to input textbox
+// value of @content would be apply for CSS Rules which is apply on particular element
+    // Ex:
+
+    // input,  
+    // textarea {  
+    //     @include input-placeholder {
+    //         color: $grey;
+    //     }
+    // }
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// To use responsive break point
+// ARG: $width as $breakpoints from _variable.scss, $type as [min,max]
+// value of @content would be apply for CSS Rules which is apply on particular element
+@mixin breakpoint($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type==max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+// To add an ellipsis
+// ARG: $truncation-boundary as maximun width in [any CSS Unit]
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// To apply margin
+// ARG: $for as [all,top,right,bottom,left], $size as [any CSS unit], 
+@mixin margin($for, $size) {
+    @if $for==all {
+        margin: $size;
+    }
+    @else if $for==top {
+        margin-top: $size;
+    }
+    @else if $for==right {
+        margin-right: $size;
+    }
+    @else if $for==bottom {
+        margin-bottom: $size;
+    }
+    @else if $for==left {
+        margin-left: $size;
+    }
+}

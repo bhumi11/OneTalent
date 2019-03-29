@@ -1,0 +1,71 @@
+<!-- Section heading -->
+<div
+  class="section-heading d-flex justify-content-between align-items-center p-2 flex-shrink-0 border border-bottom-dark">
+  <h5 class="title-heading m-0 text-module-heading">Designation</h5>
+  <button type="button" (click)="addDesignationFormShow()" class="btn btn-info"><span class="fa fa-plus"
+      aria-hidden="true"></span><span class="ml-2">ADD
+      NEW</span></button>
+</div>
+<div class="table-header w-100 px-2 pt-2">
+  <table class="table table-sm table-responsive-sm table-borderless w-100 mb-0">
+    <tr class="table-heading text-table-heading ">
+      <th class="s-no text-center">NO.</th>
+      <th class="designation-name">DESIGNATION NAME</th>
+      <th class="actions text-center">ACTIONS</th>
+    </tr>
+  </table>
+</div>
+<!-- Start: Table -->
+<div class="table-container px-2 pb-2">
+  <table class="table  table-responsive-sm table-borderless">
+    <!-- Table heading -->
+    <!-- Start : Table Body -->
+    <tbody>
+      <tr class="table-data" *ngFor="let designation of designationList; trackBy: designation?.designationId">
+        <td class="s-no text-center"> {{ designation.designationId }} </td>
+        <td class="designation-name"> {{ designation.designationTitle }} </td>
+        <td class="actions text-center">
+          <a (click)="editDesignation(designation.designationId)">
+            <img src="../../../assets/images/logo/actions_edit.png" alt="Edit-icon" class="operation-icon">
+          </a>
+          <a (click)="openDeleteDialog(designation.designationId)">
+            <img src="../../../assets/images/logo/actions_delete.png" alt="delete-icon" class="operation-icon ml-3">
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- End : Table -->
+</div>
+<!-- Start: Form -->
+
+<aside *ngIf="isFormShow" class="form-section bg-white flex-grow-1 d-flex flex-column">
+  <div
+    class="form-heading d-flex justify-content-between align-items-center flex-shrink-0 p-3 bg-light border border-bottom-primary">
+    <h5 class="text-module-heading m-0">Add New Designation</h5>
+    <a (click)="addDesignationFormHide()">
+      <img src="../../../assets/images/logo/close.png" alt="close">
+    </a>
+  </div>
+  <div class="form-wrapper d-flex overflow-auto mt-3">
+    <form class="form mx-3 w-100" [formGroup]="addDesignationForm" (ngSubmit)="addDesignationForm.valid">
+      <div class="form-group">
+        <label for="domain-name">Designation Name</label>
+        <input class="form-control form-control-sm w-100" type="text" id="domain-name"
+          formControlName="designationTitle"
+          [ngClass]="{'is-invalid':designationTitle.touched && designationTitle.invalid}">
+        <div class="invalid-feedback">
+          <div *ngIf="designationTitle.errors?.required">Designation Name is required</div>
+          <div *ngIf="designationTitle.errors?.maxlength">Allow only fifty character</div>
+          <div *ngIf="designationTitle.errors?.pattern">Please Enter valid character</div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <footer class="form-foot p-3 ">
+    <button type="button" class="btn btn-info px-4" (click)="addDesignation()">SAVE</button>
+  </footer>
+</aside>
+
+<!-- Form End -->
